@@ -1,0 +1,60 @@
+# ==========================================
+# DevTeam AI - Git Ignore
+# ==========================================
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment files and secrets
+**/.env
+**/.env.*
+*.env
+!.env.example
+!**/.env.example
+
+# Python virtual environments
+venv/
+.venv/
+backend/venv/
+
+# CrewAI storage and temporary data
+**/.crewai_storage/
+**/.tmp_appdata/
+
+# IDE and operating system
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Logs and local databases
+*.log
+*.sqlite
+*.sqlite3
+*.db
+devteam_ai.db
+
+# Vite
+frontend/.vite/
+
+# Generated project outputs
+generated_projects/*
+!generated_projects/.gitkeep
+
+# Coverage
+htmlcov/
+.coverage
+coverage.xml

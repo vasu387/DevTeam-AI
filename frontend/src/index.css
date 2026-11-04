@@ -1,0 +1,229 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --obsidian-950: #080a08;
+    --obsidian-900: #101211;
+    --obsidian-850: #0a0d0b;
+    --obsidian-800: #141710;
+    --obsidian-700: #191e1a;
+    --obsidian-600: #252a22;
+    --obsidian-500: #3d4238;
+    --obsidian-400: #6b7268;
+    --obsidian-300: #969d94;
+    --obsidian-200: #c8ccb5;
+    --obsidian-100: #e4e6da;
+    --obsidian-50:  #f2f3ec;
+    --electric-lime: #c5f467;
+    --sage-green:    #829b70;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #101211;
+    color: #f2f3ec;
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #101211;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #252a22;
+    border-radius: 99px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3d4238;
+  }
+}
+
+@layer components {
+  /* ─── Cards ─────────────────────────────────────────────────── */
+  .card,
+  .glass-card {
+    background-color: #191e1a;
+    border: 1px solid rgba(37, 42, 34, 0.65);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(8px);
+  }
+
+  .card-sm {
+    background-color: #191e1a;
+    border: 1px solid rgba(37, 42, 34, 0.5);
+    border-radius: 0.5rem;
+  }
+
+  /* ─── Buttons ────────────────────────────────────────────────── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c5f467;
+    color: #101211;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 150ms ease;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover:not(:disabled) {
+    background-color: #aee83c;
+  }
+  .btn-primary:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(197, 244, 103, 0.4);
+  }
+  .btn-primary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: #969d94;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(37, 42, 34, 0.8);
+    transition: all 150ms ease;
+    cursor: pointer;
+  }
+  .btn-secondary:hover:not(:disabled) {
+    background-color: rgba(37, 42, 34, 0.6);
+    color: #f2f3ec;
+  }
+  .btn-secondary:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  .btn-ghost {
+    background-color: transparent;
+    color: #969d94;
+    font-weight: 500;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    transition: all 150ms ease;
+  }
+  .btn-ghost:hover:not(:disabled) {
+    background-color: #191e1a;
+    color: #f2f3ec;
+  }
+
+  /* ─── Form Inputs ────────────────────────────────────────────── */
+  .input-field {
+    width: 100%;
+    background-color: #101211;
+    border: 1px solid rgba(37, 42, 34, 0.8);
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    color: #f2f3ec;
+    transition: all 150ms ease;
+  }
+  .input-field::placeholder {
+    color: #6b7268;
+  }
+  .input-field:focus {
+    outline: none;
+    border-color: rgba(197, 244, 103, 0.6);
+    box-shadow: 0 0 0 1px rgba(197, 244, 103, 0.4);
+  }
+
+  /* ─── Status Dots ────────────────────────────────────────────── */
+  .status-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 9999px;
+    display: inline-block;
+  }
+  .status-dot-idle {
+    background-color: #6b7268;
+  }
+  .status-dot-running {
+    background-color: #8ed49b;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  .status-dot-completed {
+    background-color: #c5f467;
+  }
+  .status-dot-error {
+    background-color: #e16d6d;
+  }
+
+  /* ─── Navigation ─────────────────────────────────────────────── */
+  .sidebar-item,
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #969d94;
+    transition: all 150ms ease;
+    cursor: pointer;
+  }
+  .sidebar-item:hover,
+  .nav-item:hover {
+    color: #f2f3ec;
+    background-color: rgba(25, 30, 26, 0.7);
+  }
+
+  .sidebar-item-active,
+  .nav-item-active {
+    color: #c5f467;
+    background-color: rgba(197, 244, 103, 0.08);
+    border: 1px solid rgba(197, 244, 103, 0.2);
+  }
+
+  /* ─── Engineering Grid ───────────────────────────────────────── */
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(197, 244, 103, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(197, 244, 103, 0.035) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .terminal-text {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.75rem;
+    color: #969d94;
+    line-height: 1.5;
+  }
+}
+
+@layer utilities {
+  .text-lime-glow {
+    color: #c5f467;
+    text-shadow: 0 0 16px rgba(197, 244, 103, 0.3);
+  }
+
+  .border-lime-dim {
+    border-color: rgba(197, 244, 103, 0.18);
+  }
+}

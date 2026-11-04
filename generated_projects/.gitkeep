@@ -1,0 +1,6 @@
+# generated_projects
+
+This directory will contain AI-generated project outputs once the CrewAI agent pipeline is connected in Phase 2.
+
+Each project will be stored in its own subdirectory named after the project.
+
